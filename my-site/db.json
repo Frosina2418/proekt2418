@@ -1,0 +1,17 @@
+{
+    "sunglasses": [
+      {
+        "id": 1,
+        "name": "Aviator Classic",
+        "price": 120,
+        "image": "https://example.com/aviator.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Round Metal",
+        "price": 95,
+        "image": "https://example.com/round.jpg"
+      }
+    ]
+  }
+  

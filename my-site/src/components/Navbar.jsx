@@ -1,14 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
 
 function Navbar() {
   return (
-    <nav>
-      <Link to="/">Home</Link> |{" "}
-      <Link to="/login">Login</Link> |{" "}
-      <Link to="/register">Register</Link> |{" "}
-      <Link to="/dashboard">Dashboard</Link>
+    <nav style={{ padding: '1rem', background: '#333', color: '#fff' }}>
+      <Link to="/" style={{ marginRight: '1rem', color: '#fff' }}>Home</Link>
+      <Link to="/login" style={{ marginRight: '1rem', color: '#fff' }}>Login</Link>
+      <Link to="/register" style={{ color: '#fff' }}>Register</Link>
     </nav>
-  );
+  )
 }
 
-export default Navbar;
+export default Navbar
