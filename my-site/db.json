@@ -1,17 +1,52 @@
 {
-    "sunglasses": [
-      {
-        "id": 1,
-        "name": "Aviator Classic",
-        "price": 120,
-        "image": "https://example.com/aviator.jpg"
-      },
-      {
-        "id": 2,
-        "name": "Round Metal",
-        "price": 95,
-        "image": "https://example.com/round.jpg"
-      }
-    ]
-  }
-  
+  "sunglasses": [
+    {
+      "id": 1,
+      "name": "Aviator Classic",
+      "price": 120,
+      "image": "https://static.eyerim.com/content/images/product/original/34461.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Round Metal",
+      "price": 95,
+      "image": "https://images2.ray-ban.com//cdn-record-files-pi/347b69f8-6ca1-40e4-872d-a3580139a540/a7cd21ba-336e-4293-8712-acfd006a835e/0RB3447__001__STD__shad__cfr.png?impolicy=RB_Product_clone&width=700&bgc=%23f2f2f2"
+    },
+    {
+      "id": 3,
+      "name": "Wayfarer",
+      "price": 110,
+      "image": "https://images2.ray-ban.com//cdn-record-files-pi/9ec26c0f-3ff5-4a70-9a55-b07c006d58d7/d1a70e34-6d2a-4988-8b89-b07c006d5bd7/0RW4006__601_71__P21__shad__qt.png?impolicy=RB_Product_clone&width=800&bgc=%23f2f2f2"
+    },
+    {
+      "id": 4,
+      "name": "Clubmaster",
+      "price": 130,
+      "image": "https://www.sunglasses-shop.bg/image/cache/catalog/data/products/-%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2002.05.0/Ray-Ban-Clubmaster-RB3016-W0365-1200x800.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Square Frame",
+      "price": 80,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZ96t0MUPZRsUQGZzCzHcdZ7pr8J0KVljOoQ&s"
+    },
+    {
+      "id": 6,
+      "name": "Cat Eye",
+      "price": 90,
+      "image": "https://sunglass.la/cdn/shop/products/C570-01a_2000x.jpg?v=1625867131"
+    },
+    {
+      "id": 7,
+      "name": "Retro Oval",
+      "price": 85,
+      "image": "https://assets.ajio.com/medias/sys_master/root/20230623/mQsn/6494d0ced55b7d0c63a6d777/-473Wx593H-464440695-black-MODEL.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Sport Wrap",
+      "price": 75,
+      "image": "https://www.fashioneyewear.com/cdn/shop/files/GG1574S-001-cat-xxl.jpg?v=1714276767"
+    }
+  ]
+}
