@@ -1,24 +1,58 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
+import "./Auth.css";
 
-function Login() {
-  const { login } = useAuth();
+function Login({ onLogin }) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // TODO: Add actual form logic
-    login();
-    navigate("/"); // по логирање оди на Home
+    try {
+      const res = await fetch("http://localhost:3000/users");
+      const users = await res.json();
+
+      const user = users.find(
+        (u) => u.email === email && u.password === password
+      );
+
+      if (user) {
+        localStorage.setItem("user", JSON.stringify(user));
+        onLogin();
+        navigate("/");
+      } else {
+        setError("Invalid email or password");
+      }
+    } catch (err) {
+      console.error("Login error:", err);
+      setError("Server error");
+    }
   };
 
   return (
-    <form onSubmit={handleLogin}>
-      <h2>Login</h2>
-      <input type="text" placeholder="Username" required />
-      <input type="password" placeholder="Password" required />
-      <button type="submit">Login</button>
-    </form>
+    <div className="auth-container dark-theme">
+      <form className="auth-form" onSubmit={handleSubmit}>
+        <h2>Login</h2>
+        {error && <p className="error">{error}</p>}
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+        <button type="submit">Login</button>
+      </form>
+    </div>
   );
 }
 
