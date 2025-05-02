@@ -1,20 +1,34 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
-const AuthContext = createContext();
+export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [user, setUser] = useState(null);
 
-  const login = () => {
-    setIsAuthenticated(true);
+  useEffect(() => {
+    const stored = localStorage.getItem("user");
+    if (stored) setUser(JSON.parse(stored));
+  }, []);
+
+  const login = async (email, password) => {
+    const res = await fetch("http://localhost:3000/users");
+    const users = await res.json();
+    const found = users.find(u => u.email === email && u.password === password);
+    if (found) {
+      setUser(found);
+      localStorage.setItem("user", JSON.stringify(found));
+    } else {
+      throw new Error("Invalid credentials");
+    }
   };
 
   const logout = () => {
-    setIsAuthenticated(false);
+    setUser(null);
+    localStorage.removeItem("user");
   };
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
+    <AuthContext.Provider value={{ user, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
